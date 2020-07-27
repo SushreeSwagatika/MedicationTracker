@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Alarm" representedClassName="Alarm" syncable="YES">
+        <attribute name="alarmTime" optional="YES" attributeType="String"/>
+        <attribute name="alarmType" optional="YES" attributeType="String"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="ofHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="History" inverseName="hasAlarms" inverseEntity="History"/>
+    </entity>
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uniqueId" optional="YES" attributeType="String"/>
+        <relationship name="hasAlarms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alarm" inverseName="ofHistory" inverseEntity="Alarm"/>
+    </entity>
+    <elements>
+        <element name="History" positionX="-23696.8984375" positionY="7322.1171875" width="128" height="103"/>
+        <element name="Alarm" positionX="-23448.9140625" positionY="7407.51953125" width="128" height="103"/>
+    </elements>
+</model>
